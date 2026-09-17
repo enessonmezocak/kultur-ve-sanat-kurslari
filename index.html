@@ -26,6 +26,19 @@
       padding: 24px;
       box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
     }
+
+    .banner-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .banner-img {
+      width: 100%;
+      max-width: 380px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+      display: inline-block;
+    }
     .label {
       display: block;
       font-size: 0.9rem;
@@ -170,7 +183,12 @@
 <body>
 
 <div class="widget-container">
-  <label for="kursSecimi" class="label">İncelemek İstediğiniz Atölyeyi Seçiniz</label>
+  <!-- AFİŞ GÖRSELİ -->
+  <div class="banner-container">
+    <img src="https://r.resimlink.com/savTWMz.png" alt="Kültür Sanat Kursları" class="banner-img">
+  </div>
+  
+  <label for="kursSecimi" class="label">Kayıt Yapmak İstediğiniz Atölyeyi Seçiniz</label>
   <select id="kursSecimi" class="custom-select">
     <option value="">Atölye Seçiniz...</option>
   </select>
