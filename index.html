@@ -113,6 +113,22 @@
       color: #334155;
       font-weight: 600;
     }
+    .kazanim-box {
+      background: #f8fafc;
+      border-left: 3px solid #cbd5e1;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      color: #475569;
+      line-height: 1.45;
+    }
+    .kazanim-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #0f766e;
+      margin-bottom: 2px;
+    }
     .card-footer {
       display: flex;
       justify-content: space-between;
@@ -166,22 +182,474 @@
 
 <script>
   const kursVerileri = [
-    { ad: "Kodu Game Lab", ogretmen: "Ali Osman Demirel", sure: "14 Hafta", gun: "Salı 16:30 - 17:30", kademe: "2-3-4. Sınıflar", kontenjan: "15 Kişi", tutar: "9.625 TL", link: "https://ornek-kayit-linki.com" },
-    { ad: "3 Boyutlu Tasarım", ogretmen: "Toygar Yalçın", sure: "14 Hafta", gun: "Pazartesi 16:30 - 17:30", kademe: "5-6-7. Sınıflar", kontenjan: "15 Kişi", tutar: "7.700 TL", link: "https://ornek-kayit-linki.com" },
-    { ad: "3 Boyutlu Tasarım", ogretmen: "Ali Osman Demirel", sure: "14 Hafta", gun: "Pazartesi 16:30 - 17:30", kademe: "2-3-4. Sınıflar", kontenjan: "15 Kişi", tutar: "7.700 TL", link: "https://ornek-kayit-linki.com" },
-    { ad: "Örgü - El İşi - Punch", ogretmen: "Zeynep Durmuş", sure: "14 Hafta", gun: "Perşembe 16:30 - 17:30", kademe: "2-3-4. Sınıflar", kontenjan: "5 - 10 Kişi", tutar: "7.700 TL", link: "https://ornek-kayit-linki.com" },
-    { ad: "Matematik TYT Ön Hazırlık", ogretmen: "Selçuk Top", sure: "14 Hafta", gun: "Cuma 16:30 - 17:30", kademe: "11. Sınıflar", kontenjan: "5 - 10 Kişi", tutar: "11.550 TL", link: "https://ornek-kayit-linki.com" },
-    { ad: "Akıl, Zeka ve Kağıt Kalem Oyunları", ogretmen: "Kübra Şeherli", sure: "14 Hafta", gun: "Salı 16:30 - 17:30", kademe: "İlkokul", kontenjan: "5 - 10 Kişi", tutar: "6.600 TL", link: "https://ornek-kayit-linki.com" },
-    { ad: "Fransızca", ogretmen: "Başak Küçük", sure: "14 Hafta", gun: "Çarşamba 16:30 - 17:30", kademe: "İlkokul - Ortaokul", kontenjan: "5 - 10 Kişi", tutar: "8.800 TL", link: "https://ornek-kayit-linki.com" },
-    { ad: "English Club", ogretmen: "Dilara Dursun", sure: "14 Hafta", gun: "Çarşamba 16:30 - 17:30", kademe: "Anaokulu - İlkokul", kontenjan: "8 - 10 Kişi", tutar: "12.320 TL", link: "https://ornek-kayit-linki.com" },
-    { ad: "Ukulele", ogretmen: "Gizem Metin", sure: "14 Hafta", gun: "Salı 16:30 - 17:30", kademe: "Anaokulu - İlkokul", kontenjan: "5 - 10 Kişi", tutar: "9.625 TL", link: "https://ornek-kayit-linki.com" },
-    { ad: "Flüt", ogretmen: "Gizem Metin", sure: "14 Hafta", gun: "Haftaiçi 16:30 - 17:30", kademe: "Anaokulu - İlkokul", kontenjan: "5 - 10 Kişi", tutar: "9.625 TL", link: "https://ornek-kayit-linki.com" }
+    {
+      ad: "Kodu Game Lab Atölyesi",
+      ogretmen: "Ali Osman Demirel - Toygar Yalçın",
+      sure: "14 Hafta (1 Saat)",
+      gun: "Salı 16:20 - 17:20",
+      kademe: "İlkokul 2, 3, 4. Sınıflar",
+      kontenjan: "15 Kişi",
+      tutar: "11.025 TL",
+      link: "https://iyzi.link/AKvn8A",
+      kazanim: "Algoritmik düşünme becerisini kavrar. Problem çözme etkinlikleriyle problemlere farklı bakış açılarından bakmayı hedefler."
+    },
+    {
+      ad: "3 Boyutlu Tasarım Atölyesi",
+      ogretmen: "Ali Osman Demirel - Toygar Yalçın",
+      sure: "14 Hafta (1 Saat)",
+      gun: "Pazartesi 16:20 - 17:20",
+      kademe: "Ortaokul 5, 6, 7. Sınıflar",
+      kontenjan: "15 Kişi",
+      tutar: "11.025 TL",
+      link: "https://iyzi.link/AKvn9A",
+      kazanim: "3 Boyutlu modelleme kullanım alanları hakkında bilgi sahibi olur. 3 Boyutlu yazıcıların çalışma prensibini kavrar. 3 Boyutlu tasarımlar yapar."
+    },
+    {
+      ad: "Karakalem Atölyesi",
+      ogretmen: "Taner Turan (Görsel Sanatlar)",
+      sure: "14 Hafta (1 Saat)",
+      gun: "Salı 16:20 - 17:20",
+      kademe: "İlkokul - Ortaokul",
+      kontenjan: "10 - 15 Kişi",
+      tutar: "11.025 TL",
+      link: "https://iyzi.link/AKvn-g",
+      kazanim: "Tasarım becerisi elde eder, kendini sanat yoluyla ifade eder, hayal gücünü kullanarak tasarımlar yapar."
+    },
+    {
+      ad: "Ben Sanatçıyım Atölyesi",
+      ogretmen: "Taner Turan (Görsel Sanatlar)",
+      sure: "14 Hafta (1 Saat)",
+      gun: "Çarşamba 16:20 - 17:20",
+      kademe: "Anaokulu - İlkokul - Ortaokul",
+      kontenjan: "10 - 15 Kişi",
+      tutar: "11.025 TL",
+      link: "https://iyzi.link/AKvn-w",
+      kazanim: "Tasarım becerisi elde eder, kendini sanat yoluyla ifade eder, hayal gücünü kullanarak tasarımlar yapar."
+    },
+    {
+      ad: "Hama Boncuk Atölyesi",
+      ogretmen: "Taner Turan (Görsel Sanatlar)",
+      sure: "14 Hafta (1 Saat)",
+      gun: "Hafta İçi 16:30 - 17:30",
+      kademe: "Anaokulu - İlkokul",
+      kontenjan: "10 - 15 Kişi",
+      tutar: "11.025 TL",
+      link: "https://iyzi.link/AKvoAA",
+      kazanim: "Tasarım becerisi elde eder, kendini sanat yoluyla ifade eder, hayal gücünü kullanarak tasarımlar yapar."
+    },
+    {
+      ad: "Paper Art Atölyesi (Kağıt Sanatı)",
+      ogretmen: "Taner Turan (Görsel Sanatlar)",
+      sure: "14 Hafta (1 Saat)",
+      gun: "Hafta İçi 16:30 - 17:30",
+      kademe: "İlkokul - Ortaokul",
+      kontenjan: "10 - 15 Kişi",
+      tutar: "11.025 TL",
+      link: "https://iyzi.link/AKvoAg",
+      kazanim: "Tasarım becerisi elde eder, kendini sanat yoluyla ifade eder, hayal gücünü kullanarak tasarımlar yapar."
+    },
+    {
+      ad: "Jimnastik Atölyesi",
+      ogretmen: "Ezgi Kutlu (Beden Eğitimi)",
+      sure: "14 Hafta (1 Saat)",
+      gun: "Çarşamba 16:20 - 17:20",
+      kademe: "Anaokulu - İlkokul",
+      kontenjan: "10 - 15 Kişi",
+      tutar: "11.025 TL",
+      link: "https://iyzi.link/AKvoAw",
+      kazanim: "Fiziksel güç ve dayanıklılık, esneklik ve hareket kabiliyeti, koordinasyon ve denge, motor becerileri ve refleksler."
+    },
+    {
+      ad: "Halk Oyunları",
+      ogretmen: "Ezgi Kutlu (Beden Eğitimi)",
+      sure: "14 Hafta (1 Saat)",
+      gun: "Cuma 16:20 - 17:20",
+      kademe: "İlkokul - Ortaokul",
+      kontenjan: "10 - 15 Kişi",
+      tutar: "11.025 TL",
+      link: "https://iyzi.link/AKvoDA",
+      kazanim: "Kültürel bilinç ve farkındalık, kondisyon ve denge, ritim ve müzik duygusu, esneklik ve takım çalışması."
+    },
+    {
+      ad: "Yüzme Atölyesi Kız",
+      ogretmen: "Ezgi Kutlu (Beden Eğitimi)",
+      sure: "14 Hafta (1 Saat)",
+      gun: "Çarşamba 16:20 - 17:20",
+      kademe: "Anaokulu - İlkokul",
+      kontenjan: "10 - 15 Kişi",
+      tutar: "13.125 TL",
+      link: "https://iyzi.link/AKvoDg",
+      kazanim: "Temel yüzme teknikleri, su güvenliği ve kurtarma bilgisi, dayanıklılık, koordinasyon ve denge gelişimi."
+    },
+    {
+      ad: "Yüzme Atölyesi Kız",
+      ogretmen: "Çağla Demirci (Beden Eğitimi)",
+      sure: "14 Hafta (1 Saat)",
+      gun: "Perşembe 16:20 - 17:20",
+      kademe: "Anaokulu - 1. Sınıf (Kız)",
+      kontenjan: "10 - 15 Kişi",
+      tutar: "13.125 TL",
+      link: "https://iyzi.link/AKvoEQ",
+      kazanim: "Temel yüzme teknikleri, su güvenliği ve kurtarma bilgisi, dayanıklılık, koordinasyon ve denge gelişimi."
+    },
+    {
+      ad: "Yüzme Atölyesi Erkek",
+      ogretmen: "Çağla Demirci (Beden Eğitimi)",
+      sure: "14 Hafta (1 Saat)",
+      gun: "Pazartesi 16:20 - 17:20",
+      kademe: "Anaokulu - 1. Sınıf (Erkek)",
+      kontenjan: "10 - 15 Kişi",
+      tutar: "13.125 TL",
+      link: "https://iyzi.link/AKvoFA",
+      kazanim: "Temel yüzme teknikleri, su güvenliği ve kurtarma bilgisi, dayanıklılık, koordinasyon ve denge gelişimi."
+    },
+    {
+      ad: "Hentbol Atölyesi (Gelişim Grubu)",
+      ogretmen: "Oğuzhan Tiryaki (Beden Eğitimi)",
+      sure: "14 Hafta (1 Saat)",
+      gun: "Salı 16:20 - 17:20",
+      kademe: "1 ve 2. Sınıf (Kız - Erkek)",
+      kontenjan: "10 - 15 Kişi",
+      tutar: "11.025 TL",
+      link: "https://iyzi.link/AKvoGA",
+      kazanim: "Temel teknik beceriler, strateji ve teknik anlayış, dayanıklılık ve kondisyon, denge ve stratejik düşünme."
+    },
+    {
+      ad: "Hentbol Atölyesi (Minikler Grubu)",
+      ogretmen: "Oğuzhan Tiryaki (Beden Eğitimi)",
+      sure: "14 Hafta (1 Saat)",
+      gun: "Çarşamba 16:20 - 17:20",
+      kademe: "3 ve 4. Sınıf (Kız - Erkek)",
+      kontenjan: "10 - 15 Kişi",
+      tutar: "11.025 TL",
+      link: "https://iyzi.link/AKvoGw",
+      kazanim: "Temel teknik beceriler, strateji ve teknik anlayış, dayanıklılık ve kondisyon, denge ve stratejik düşünme."
+    },
+    {
+      ad: "Hentbol Atölyesi (Küçükler Grubu)",
+      ogretmen: "Oğuzhan Tiryaki (Beden Eğitimi)",
+      sure: "14 Hafta (1 Saat)",
+      gun: "Perşembe 16:20 - 17:20",
+      kademe: "5 ve 6. Sınıf (Kız - Erkek)",
+      kontenjan: "10 - 15 Kişi",
+      tutar: "11.025 TL",
+      link: "https://iyzi.link/AKvoHQ",
+      kazanim: "Temel teknik beceriler, strateji ve teknik anlayış, dayanıklılık ve kondisyon, denge ve stratejik düşünme."
+    },
+    {
+      ad: "Futbol Atölyesi",
+      ogretmen: "Oğuzhan Tiryaki (Beden Eğitimi)",
+      sure: "14 Hafta (1 Saat)",
+      gun: "Cuma 17:20 - 18:20",
+      kademe: "İlkokul - Ortaokul",
+      kontenjan: "10 - 15 Kişi",
+      tutar: "11.025 TL",
+      link: "https://iyzi.link/AKvoHg",
+      kazanim: "Temel teknik beceriler, strateji ve teknik anlayış, dayanıklılık ve kondisyon, denge ve stratejik düşünme."
+    },
+    {
+      ad: "Badminton Atölyesi",
+      ogretmen: "Oğuzhan Tiryaki (Beden Eğitimi)",
+      sure: "14 Hafta (1 Saat)",
+      gun: "Cuma 16:20 - 17:20",
+      kademe: "İlkokul - Ortaokul",
+      kontenjan: "10 - 15 Kişi",
+      tutar: "11.025 TL",
+      link: "https://iyzi.link/AKvoKQ",
+      kazanim: "Temel teknik beceriler, refleks ve hız, dayanıklılık ve kondisyon, odaklanma ve konsantrasyon."
+    },
+    {
+      ad: "Voleybol Atölyesi",
+      ogretmen: "Oğuzhan Tiryaki (Beden Eğitimi)",
+      sure: "14 Hafta",
+      gun: "Pazartesi 17:20 - 18:20",
+      kademe: "İlkokul - Ortaokul",
+      kontenjan: "10 - 15 Kişi",
+      tutar: "11.025 TL",
+      link: "https://iyzi.link/AKvoKg",
+      kazanim: "Temel teknik beceriler, refleks ve hız, dayanıklılık ve kondisyon, odaklanma ve konsantrasyon."
+    },
+    {
+      ad: "Basketbol Atölyesi",
+      ogretmen: "Cevathan Özdemir (Beden Eğitimi)",
+      sure: "14 Hafta (1 Saat)",
+      gun: "Pazartesi 16:20 - 17:20",
+      kademe: "İlkokul - Ortaokul",
+      kontenjan: "10 - 15 Kişi",
+      tutar: "11.025 TL",
+      link: "https://iyzi.link/AKvoLA",
+      kazanim: "Basketbol temel teknikler, strateji ve oyun anlayışı, dayanıklılık, takım çalışması ve liderlik."
+    },
+    {
+      ad: "Piyano Atölyesi - Ukulele Atölyesi",
+      ogretmen: "Ramazan Çelik (Müzik Öğretmeni)",
+      sure: "14 Hafta (1 Saat)",
+      gun: "Perşembe 16:20 - 17:20",
+      kademe: "Anaokulu",
+      kontenjan: "5 Kişilik Gruplar",
+      tutar: "12.600 TL",
+      link: "https://iyzi.link/AKvoLg",
+      kazanim: "Temel müziksel teknik becerileri geliştirme, müzik kulağı, ritim, melodi ve eser çalma becerisi."
+    },
+    {
+      ad: "Piyano Atölyesi",
+      ogretmen: "Serdar Kutanis (Müzik Öğretmeni)",
+      sure: "14 Hafta (1 Saat)",
+      gun: "Çarşamba 16:20 - 17:20",
+      kademe: "İlkokul - Ortaokul - Lise",
+      kontenjan: "5 Kişilik Gruplar",
+      tutar: "13.125 TL",
+      link: "https://iyzi.link/AKvoMA",
+      kazanim: "Temel müziksel teknik becerileri geliştirme, müzik kulağı, ritim, melodi ve odaklanma."
+    },
+    {
+      ad: "Bateri Atölyesi",
+      ogretmen: "Serdar Kutanis (Müzik Öğretmeni)",
+      sure: "14 Hafta (1 Saat)",
+      gun: "Salı 16:20 - 17:20",
+      kademe: "İlkokul - Ortaokul - Lise",
+      kontenjan: "5 - 10 Kişi",
+      tutar: "15.750 TL",
+      link: "https://iyzi.link/AKvoNQ",
+      kazanim: "Temel müziksel teknik becerileri geliştirme, müzik kulağı, ritim, melodi ve odaklanma."
+    },
+    {
+      ad: "Ukulele - Gitar Atölyesi",
+      ogretmen: "Serdar Kutanis (Müzik Öğretmeni)",
+      sure: "14 Hafta",
+      gun: "Cuma 16:20 - 17:20",
+      kademe: "İlkokul - Ortaokul - Lise",
+      kontenjan: "5 - 10 Kişi",
+      tutar: "12.600 TL",
+      link: "https://iyzi.link/AKvoOQ",
+      kazanim: "Temel müziksel teknik becerileri geliştirme, ritim, melodi ve eser çalma becerisi."
+    },
+    {
+      ad: "Şan Atölyesi",
+      ogretmen: "Serdar Kutanis (Müzik Öğretmeni)",
+      sure: "14 Hafta (1 Saat)",
+      gun: "Cumartesi 10:00 - 11:00",
+      kademe: "İlkokul - Ortaokul - Lise",
+      kontenjan: "10 - 15 Kişi",
+      tutar: "10.500 TL",
+      link: "https://iyzi.link/AKvoOg",
+      kazanim: "İçsel ses ve nefes tekniklerini öğrenerek doğru ve etkili şarkı söyleme becerisi kazanır."
+    },
+    {
+      ad: "Örgü El İşi - Punch Atölyesi",
+      ogretmen: "Zeynep Durmuş (Sınıf Öğretmeni)",
+      sure: "14 Hafta",
+      gun: "Perşembe 16:20 - 17:20",
+      kademe: "İlkokul",
+      kontenjan: "10 - 15 Kişi",
+      tutar: "5.880 TL",
+      link: "https://iyzi.link/AKvoPQ",
+      kazanim: "Şiş, tığ ve etamin işi öğrenerek öğrencilerin ince motor el becerileri gelişir."
+    },
+    {
+      ad: "Anlayarak Hızlı Okuma Atölyesi",
+      ogretmen: "Zeynep Durmuş (Sınıf Öğretmeni)",
+      sure: "14 Hafta",
+      gun: "Salı 16:20 - 17:20",
+      kademe: "7 ve 8. Sınıf",
+      kontenjan: "5 - 10 Kişi",
+      tutar: "7.350 TL",
+      link: "https://iyzi.link/AKvoPg",
+      kazanim: "Okuma hızını arttıran egzersizler yaparak zihin ve hafıza geliştirme, bilgiyi kalıcı hale getirme."
+    },
+    {
+      ad: "YDEP (Yapılandırılmış Disleksi Eğitimi) Atölyesi",
+      ogretmen: "Sakine Zeynep Durmuş (Sınıf Öğretmeni)",
+      sure: "14 Hafta (1 Saat)",
+      gun: "Hafta İçi 16:30 - 17:30 / Cumartesi",
+      kademe: "İlkokul - Ortaokul",
+      kontenjan: "Bireysel",
+      tutar: "14.700 TL",
+      link: "https://iyzi.link/AKvoWw",
+      kazanim: "6-14 yaş öğrenme güçlüğü yaşayan bireylere özgü geliştirilmiş bireysel müdahale eğitim programıdır."
+    },
+    {
+      ad: "Sosyal Beceri Kazandırma Atölyesi",
+      ogretmen: "Şeyma Şahin (Rehberlik Öğretmeni)",
+      sure: "14 Hafta",
+      gun: "Cumartesi 11:00 - 12:00",
+      kademe: "Anaokulu - İlkokul",
+      kontenjan: "5 - 10 Kişi",
+      tutar: "14.700 TL",
+      link: "https://iyzi.link/AKvomA",
+      kazanim: "İletişim, empati, ekip çalışması, problem ve çatışma çözme, stres yönetimi ve sınır koyma becerileri."
+    },
+    {
+      ad: "Seramik Atölyesi",
+      ogretmen: "Sümeyra Kılıç (Anaokulu Öğretmeni)",
+      sure: "14 Hafta (1 Saat)",
+      gun: "Salı 16:20 - 17:20",
+      kademe: "Anaokulu - İlkokul - Ortaokul",
+      kontenjan: "5 - 10 Kişi",
+      tutar: "11.025 TL",
+      link: "https://iyzi.link/AKvonQ",
+      kazanim: "Küçük kas gelişimini ve yaratıcılığı desteklemek, üç boyutlu algıyı güçlendirmek."
+    },
+    {
+      ad: "Kur'an-ı Kerim Atölyesi",
+      ogretmen: "Meryem Taşdelen (Kur'an-ı Kerim Öğretmeni)",
+      sure: "14 Hafta (1 Saat)",
+      gun: "Hafta İçi 16:30 - 17:30",
+      kademe: "İlkokul - Ortaokul",
+      kontenjan: "10 - 15 Kişi",
+      tutar: "11.025 TL",
+      link: "https://iyzi.link/AKvong",
+      kazanim: "Kur'an-ı Kerim okuma, tecvid bilgisi öğrenme, dua ve sure ezberi."
+    },
+    {
+      ad: "Matematik Kaşifleri Atölyesi",
+      ogretmen: "Tuğba Nur Yıldız (Sınıf Öğretmeni)",
+      sure: "14 Hafta",
+      gun: "Perşembe 16:20 - 17:20",
+      kademe: "2 ve 3. Sınıflar",
+      kontenjan: "10 - 15 Kişi",
+      tutar: "10.500 TL",
+      link: "https://iyzi.link/AKvooQ",
+      kazanim: "Yeni nesil sorularla problem çözme, akıl yürütme ve matematiksel düşünme becerilerini geliştirme."
+    },
+    {
+      ad: "English Club Atölyesi",
+      ogretmen: "Dilara Dursun (İngilizce Öğretmeni)",
+      sure: "14 Hafta",
+      gun: "Çarşamba 16:20 - 17:20",
+      kademe: "Anaokulu - İlkokul",
+      kontenjan: "10 - 15 Kişi",
+      tutar: "14.700 TL",
+      link: "https://iyzi.link/AKvoog",
+      kazanim: "Etkileşimli aktivitelerle akıcı İngilizce konuşma ve iletişim pratiğini geliştirme."
+    },
+    {
+      ad: "English Club Atölyesi",
+      ogretmen: "Dilek Demir (İngilizce Öğretmeni)",
+      sure: "14 Hafta",
+      gun: "Salı 16:20 - 17:20",
+      kademe: "Ortaokul - Lise",
+      kontenjan: "10 - 15 Kişi",
+      tutar: "14.700 TL",
+      link: "https://iyzi.link/AKvoqA",
+      kazanim: "İleri düzey İngilizce konuşma ve münazara pratiğini geliştirme."
+    },
+    {
+      ad: "Kanaviçe Atölyesi",
+      ogretmen: "Şerife Selli (Tarih Öğretmeni)",
+      sure: "14 Hafta",
+      gun: "Salı 16:20 - 17:20",
+      kademe: "Ortaokul - Lise",
+      kontenjan: "10 - 15 Kişi",
+      tutar: "7.350 TL",
+      link: "https://iyzi.link/AKvo2A",
+      kazanim: "Öğrencinin el becerisi ve göz koordinasyonunu sağlamak, estetik ve renk uyumunu öğretmek."
+    },
+    {
+      ad: "Sağlıklı ve Lezzetli Tarifler Atölyesi",
+      ogretmen: "Şerife Selli (Tarih Öğretmeni)",
+      sure: "14 Hafta",
+      gun: "Çarşamba 16:20 - 17:20",
+      kademe: "Ortaokul - Lise",
+      kontenjan: "10 - 15 Kişi",
+      tutar: "7.350 TL",
+      link: "https://iyzi.link/AKvo3Q",
+      kazanim: "Mutfak becerileri, sağlıklı beslenme bilinci ve tarif üretimi konusunda öğrencileri destekleme."
+    },
+    {
+      ad: "Yaratıcı Yazarlık Atölyesi",
+      ogretmen: "Emine Ülker Yılmaz",
+      sure: "14 Hafta",
+      gun: "Hafta İçi 16:20 - 17:20",
+      kademe: "Ortaokul - Lise",
+      kontenjan: "10 - 15 Kişi",
+      tutar: "11.025 TL",
+      link: "https://iyzi.link/AKvo5Q",
+      kazanim: "Yazma becerisi, dili doğru kullanma, yazım kurallarına hâkimiyet ve hayal gücünün gelişimi."
+    },
+    {
+      ad: "Yapay Zeka ile Etkili İçerik Üretimi Atölyesi",
+      ogretmen: "Dr. Cihan Sert (Akademisyen)",
+      sure: "8 Hafta (Haftada 30 Dk)",
+      gun: "Hafta İçi Online 19:20 - 20:30",
+      kademe: "5, 6, 7. Sınıflar",
+      kontenjan: "15 Kişi",
+      tutar: "3.150 TL",
+      link: "https://iyzi.link/AKvo7g",
+      kazanim: "Üretim odaklı yapay zeka araçları ve içerik oluşturma teknikleri."
+    },
+    {
+      ad: "Mind Gaming-1: Düşünme Sistematiği ve Akıl Yürütme",
+      ogretmen: "Dr. Hayati Adalar",
+      sure: "8 Hafta (Haftada 30 Dk)",
+      gun: "Hafta İçi Online 19:20 - 20:30",
+      kademe: "5, 6, 7. Sınıflar",
+      kontenjan: "15 Kişi",
+      tutar: "3.150 TL",
+      link: "https://iyzi.link/AKvo7w",
+      kazanim: "Beyin çalışma sistematiği, akıl yürütme biçimleri, analitik düşünme becerileri ve zihinsel aktivite uygulamaları."
+    },
+    {
+      ad: "Strateji Temelli Okuma Becerilerini Geliştirme Atölyesi",
+      ogretmen: "Dr. Cihan Sert (Akademisyen)",
+      sure: "8 Hafta (Haftada 30 Dk)",
+      gun: "Hafta İçi Online 19:20 - 20:30",
+      kademe: "5, 6, 7. Sınıflar",
+      kontenjan: "15 Kişi",
+      tutar: "3.150 TL",
+      link: "https://iyzi.link/AKvo9A",
+      kazanim: "Okuduğunu anlamayı etkileyen faktörler, öğrenme stratejileri ve yapay zeka araçlarıyla okuma geliştirme."
+    },
+    {
+      ad: "Pratik Yapay Zeka: Öğren-Kazan-Yön Ver Atölyesi",
+      ogretmen: "Doç. Dr. İsmail Durak",
+      sure: "8 Hafta (Haftada 30 Dk)",
+      gun: "Hafta İçi Online 19:20 - 20:30",
+      kademe: "9, 10, 11. Sınıflar",
+      kontenjan: "15 Kişi",
+      tutar: "3.150 TL",
+      link: "https://iyzi.link/AKvo9w",
+      kazanim: "Yapay zekaya giriş, popüler üretken araçların tanıtımı ve uygulamalı pratik kullanımı."
+    },
+    {
+      ad: "Matematikle Düşün Atölyesi",
+      ogretmen: "Doç. Dr. Hakan Mutlu",
+      sure: "8 Hafta (Haftada 30 Dk)",
+      gun: "Hafta İçi Online 19:20 - 20:30",
+      kademe: "9, 10, 11. Sınıflar",
+      kontenjan: "15 Kişi",
+      tutar: "3.150 TL",
+      link: "https://iyzi.link/AKvo_Q",
+      kazanim: "Eleştirel düşünmeyi geliştirir, zamanı verimli kullanmayı sağlar, analitik yaklaşımı güçlendirir."
+    },
+    {
+      ad: "Blender ile Oyun Eşyaları Tasarımı Atölyesi",
+      ogretmen: "Eyüpcan Işık",
+      sure: "8 Hafta (Haftada 30 Dk)",
+      gun: "Hafta İçi Online 19:20 - 20:30",
+      kademe: "9, 10, 11. Sınıflar",
+      kontenjan: "15 Kişi",
+      tutar: "3.150 TL",
+      link: "https://iyzi.link/AKvpAg",
+      kazanim: "3B modellemeye giriş, oyun varlıkları tasarımı, Blender araçları ve render sunum teknikleri."
+    },
+    {
+      ad: "Kendimi Tanıyorum Oyuncağımı Tasarlıyorum Atölyesi",
+      ogretmen: "Psk. Danışman Pelin Alaylı Uzel - Duygu Soycan",
+      sure: "14 Hafta (1 Saat)",
+      gun: "Salı 16:20 - 17:20",
+      kademe: "Anaokulu - İlkokul",
+      kontenjan: "15 Kişi",
+      tutar: "7.455 TL",
+      link: "https://iyzi.link/AKvpCQ",
+      kazanim: "Çocukların duygusal ve sosyal farkındalıklarını artırarak yaratıcı tasarım becerilerini geliştirmeyi amaçlar."
+    }
   ];
 
   const selectEl = document.getElementById("kursSecimi");
   const sonucAlani = document.getElementById("sonucAlani");
 
-  // Benzersiz kurs isimlerini dropdown'a doldur
+  // Benzersiz kurs isimlerini dropdown'a aktar
   const benzersizKurslar = [...new Set(kursVerileri.map(k => k.ad))];
   benzersizKurslar.forEach(ad => {
     const opt = document.createElement("option");
@@ -222,9 +690,15 @@
             <span class="info-value">${item.kontenjan}</span>
           </div>
         </div>
+        ${item.kazanim ? `
+          <div class="kazanim-box">
+            <div class="kazanim-title">Elde Edilecek Kazanımlar</div>
+            <div>${item.kazanim}</div>
+          </div>
+        ` : ''}
         <div class="card-footer">
           <span class="price">${item.tutar}</span>
-          <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="apply-btn">Kursa Başvur ↗</a>
+          <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="apply-btn">Kayıt & Ödeme Yap ↗</a>
         </div>
       </div>
     `).join("");
